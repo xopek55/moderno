@@ -73,13 +73,13 @@
   &-title {
     margin-bottom: 28px;
     font-size: 48px;
-    font-weight: 700;
+    @include f700;
     line-height: 72px;
   }
   &-text {
     margin-bottom: 50px;
     font-size: 20px;
-    font-weight: 500;
+    @include f500;
     line-height: 30px;
   }
   &-form {
@@ -94,11 +94,11 @@
       height: 56px;
       border: none;
       font-size: 14px;
-      font-weight: 500;
+      @include f500;
 
       &::placeholder {
         color: #90a4ae;
-        font-weight: 500;
+        @include f500;
         padding-left: 25px;
         padding-right: 60px;
       }
@@ -162,7 +162,7 @@
     padding: 10px 30px;
     align-items: center;
     min-height: 90px;
-    font-weight: 500;
+    @include f500;
     border-bottom: 1px solid #e7ecf2;
   }
   &-name {
@@ -181,7 +181,7 @@
   &-price {
     font-size: 20px;
     color: $bg;
-    font-weight: 700;
+    @include f700;
   }
   &-info {
     display: flex;
@@ -193,6 +193,7 @@
   &-author {
     display: flex;
     align-items: center;
+    max-width: 245px;
     .avatar {
       width: 30px;
       height: 30px;
@@ -206,7 +207,13 @@
     }
     span {
       font-size: 14px;
-      font-weight: 500;
+      @include f500;
+    }
+  }
+  &-star {
+    font-size: 12px;
+    span {
+      color: $bg;
     }
   }
 }
@@ -230,3 +237,168 @@
 }
 
 // end products
+
+// product-slider
+.product-slider {
+  padding: 110px 0px 120px;
+  .slick-dots {
+    text-align: center;
+    margin-top: 50px;
+    li {
+      display: inline-block;
+      margin-left: 3px;
+      margin-right: 3px;
+      &.slick-active {
+        button {
+          background-color: $green;
+        }
+      }
+
+      button {
+        border-radius: 50%;
+        background-color: rgb(232, 232, 232);
+        border: none;
+        font-size: 0;
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+        outline: none;
+      }
+    }
+  }
+}
+
+//end product-slider
+
+// start advantages
+
+.advantages {
+  background-color: $bg;
+  padding: 110px 0;
+}
+
+.advantages-title {
+  color: #fff;
+}
+
+.advantages__inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.advantages__item {
+  max-width: 370px;
+  text-align: center;
+  padding: 0px 15px;
+  
+  &:hover {
+    .advantages__item-images {
+      background-color: $green;
+    }
+    .advantages__item-title {
+      color: $green;
+    }
+    .advantages__item-images path {
+      fill: #fff;
+    }
+  }
+  &-images {
+    width: 114px;
+    height: 114px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 30px;
+    transition: all 0.5s;
+  }
+  &-title {
+    color: #fff;
+    margin-bottom: 25px;
+    @include f500;
+    font-size: 24px;
+    transition: all 0.3s;
+  }
+
+  &-text {
+    font-size: 15px;
+  }
+}
+
+//end advantages
+
+//start author
+
+.author {
+  
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 750px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__box{
+    max-width: 650px;
+    width: 100%;
+    min-height: 215px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $green;
+  }
+  &__title {
+    font-size: 30px;
+    line-height: 30px;
+    color: #fff;
+    margin-right: 45px;
+    max-width: 265px;
+    span{
+      @include f700;
+    }
+  }
+  &__link {
+font-size: 18px;
+line-height: 36px;
+height: 64px;
+padding: 14px 40px;
+background-color: #fff;
+  }
+}
+//end author
+
+//star tutorial
+.tutorial {
+  padding: 70px 0 120px;
+  &__inner {
+    display: flex;
+    justify-content: space-between;  
+  }
+  &__item {
+    max-width: 370px;
+    width: 100%;
+  }
+}
+
+.tutorial__item {
+  &-images{
+    min-height: 270px;
+    background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+ 
+  }
+  &-title{
+    background-color: #f8f8f8;
+    font-size: 24px;
+    text-align: center;
+    @include f700;
+    padding: 30px 10px;
+    color: $bg;
+
+  }
+}
+
+
+//end tutorial
